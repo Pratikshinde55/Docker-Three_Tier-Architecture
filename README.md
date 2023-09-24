@@ -75,7 +75,7 @@ To access wordpresss from browser,need EC2 instance public IP Address+Port no. g
 
 To get wordpress interface on google ,provide details that provided in the form of enviromental variable during "database" caintainer launch
 
-http://65.2.146.158:1234 <<------- see interface(This site not works as instance is terminated now)
+http://65.2.146.158:1234 <<------- see interface(This site does not work as instance is terminated now)
 
 ![Screenshot 2023-08-30 182954](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/6ffc643c-d1bb-47fb-a6e4-4e376b263aa9)
 
