@@ -69,30 +69,37 @@ Substeps
 
 To access wordpresss from browser,need EC2 instance public IP Address+Port no. given to wordpresss container.
 
-![Screenshot 2023-08-30 182811](https://github.com/pratikshashinde55/Three-Tier-Architecture/assets/61465971/10362dc7-d157-4d81-801e-109dada0e487)
+![Screenshot 2023-08-30 182811](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/90f63389-dbfc-40aa-84bb-82d28772da1b)
+
 
 To get wordpress interface on google ,provide details that provided in the form of enviromental variable during "database" caintainer launch
 
 http://65.2.146.158:1234 <<------- see interface(This site not works as instance is terminated now)
 
-![Screenshot 2023-08-30 182954](https://github.com/pratikshashinde55/Three-Tier-Architecture/assets/61465971/373ccfce-737e-4d25-adb9-67e718b13eed)
+![Screenshot 2023-08-30 182954](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/6ffc643c-d1bb-47fb-a6e4-4e376b263aa9)
 
-![Screenshot 2023-08-30 183151](https://github.com/pratikshashinde55/Three-Tier-Architecture/assets/61465971/274b58bf-662d-471e-b30d-0377d9ac259d)
+
+![Screenshot 2023-08-30 183151](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/b8c3d0e1-9a34-4a66-970e-236fe770f9b4)
+
 
 7.Create username and password to create blog on wordpress:
 
-![Screenshot 2023-08-30 183243](https://github.com/pratikshashinde55/Three-Tier-Architecture/assets/61465971/252d4b4d-25b8-42c7-a578-533c799266e7)
+![Screenshot 2023-08-30 183243](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/af521986-471a-4b56-a6f7-079cc889c2cf)
 
-![Screenshot 2023-08-30 183447](https://github.com/pratikshashinde55/Three-Tier-Architecture/assets/61465971/7d416ddc-dc57-4ea2-93f0-fa2f4271e632)
+
+![Screenshot 2023-08-30 183447](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/e159eb84-9f1e-4158-8c41-75376ec2cda0)
 
 
 8. On Wordpress Dashboard->create Post->Add Content->Publish->Copy link and paste in the browser.
 
-   ![Screenshot 2023-08-30 183516](https://github.com/pratikshashinde55/Three-Tier-Architecture/assets/61465971/1fcf7a55-6131-4b29-93a0-e4af41897ecf)
 
-![Screenshot 2023-08-30 184349](https://github.com/pratikshashinde55/Three-Tier-Architecture/assets/61465971/81302180-ad3f-4a8a-83c5-12f70395e70e)
+![Screenshot 2023-08-30 183516](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/552edbcb-1dd5-4467-b99d-328a5bac4c53)
 
-![Screenshot 2023-08-30 184434](https://github.com/pratikshashinde55/Three-Tier-Architecture/assets/61465971/f112c827-0bdd-4f42-970c-1aac3e2555ac)
+![Screenshot 2023-08-30 184349](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/9cf35c01-a9fb-40a5-9931-187d04b24787)
+
+
+![Screenshot 2023-08-30 184434](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/c76e18ff-f6ea-4eba-b4dd-e18ce00331d7)
+
 
 
 This is Three Tier Architecture using Docker----
