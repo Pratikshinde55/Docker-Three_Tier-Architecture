@@ -98,8 +98,3 @@ This is Three Tier Architecture using Docker
 #MySQL-Database
 #PSNet-Own bridge driver.
 
-
-
-
-
- 
