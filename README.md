@@ -7,13 +7,13 @@ Three Tier Architecture using Docker
    
 Use following Commands:
 
-      a. sudo su - root ,  
+ a. sudo su - root ,  
       
-      b. yum install docker -y,
+ b. yum install docker -y,
       
-      c. systemctl enable  docker --now ,
+ c. systemctl enable  docker --now ,
       
-      d. systemctl status docker
+ d. systemctl status docker
       
 
    ![Screenshot 2023-08-30 181908](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/1bd38c3c-06dc-436f-9780-00f32455229c)
@@ -21,7 +21,7 @@ Use following Commands:
 
 2.create own net name as "psnet"
 
-        subnet range 10.0.0.1/16 in CIDR format
+ subnet range 10.0.0.1/16 in CIDR format
         
         
   ![Screenshot 2023-08-30 185447](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/e265d278-0646-488d-ae0d-de9c46bcf87c)
