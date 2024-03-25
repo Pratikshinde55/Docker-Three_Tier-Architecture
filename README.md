@@ -7,13 +7,14 @@ Three Tier Architecture using Docker
    
 Use following Commands:
 
- a. sudo su - root ,  
+
+     #sudo su - root   
       
- b. yum install docker -y,
+     #yum install docker -y,
       
- c. systemctl enable  docker --now ,
+     #systemctl enable  docker --now ,
       
- d. systemctl status docker
+     #systemctl status docker
       
 
    ![Screenshot 2023-08-30 181908](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/1bd38c3c-06dc-436f-9780-00f32455229c)
