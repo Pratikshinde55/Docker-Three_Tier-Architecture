@@ -8,7 +8,9 @@ Three Tier Architecture using Docker
 Use following Commands:
 
 
-     #sudo su - root   
+     #sudo su - root
+
+     
      
       
      #yum install docker -y
