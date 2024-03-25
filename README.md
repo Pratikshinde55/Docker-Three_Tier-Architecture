@@ -1,9 +1,9 @@
 # Three-Tier-Architecture
 Three Tier Architecture using Docker
 
-# Steps:
-
-1.Launch EC2 instance and install docker inside and start docker Service:
+ Steps-1:
+ 
+ Launch EC2 instance and install docker inside and start docker Service:
    
 Use following Commands:
 
@@ -19,7 +19,9 @@ Use following Commands:
    ![Screenshot 2023-08-30 181908](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/1bd38c3c-06dc-436f-9780-00f32455229c)
 
 
-2.create own net name as "psnet"
+Steps-2: 
+
+create own net name as "psnet"
 
  subnet range 10.0.0.1/16 in CIDR format
         
@@ -35,7 +37,9 @@ Use following Commands:
         #docker network ls
 
 
-3.Create database with own driver (database- container name)...also provide required enviromental variable
+Steps-3:
+
+Create database with own driver (database- container name)...also provide required enviromental variable
 
 
  ![Screenshot 2023-08-30 185342](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/98939e39-6331-4145-9fee-be84232e668e)
@@ -56,7 +60,9 @@ Use following Commands:
 Here,check provided subnet range.
 
 
-4.Launch wordpress and uase PATTING to make outside world connection 
+Steps-4:
+
+Launch wordpress and uase PATTING to make outside world connection 
 
 
  As port number of container is 80 also check by
@@ -77,7 +83,9 @@ Can also check MYWORDPRESS has our subnet range by command on above screenshots.
                  #docker inspect mywordpress
 
 
-5.EC2 intance has Firewall which cannot be connected by outside world, so we can modify inbound rules(All traffic allowed)
+Steps-5:
+
+EC2 intance has Firewall which cannot be connected by outside world, so we can modify inbound rules(All traffic allowed)
 
 
 ![Screenshot 2023-08-30 182129](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/4c596a4b-39f4-49fa-911f-5dc0a4cc01a1)
@@ -100,7 +108,9 @@ Substeps:
  7. save rule
 
 
-6.instance public + our port number that provide in wordpress contanier.
+Steps-6:
+
+instance public + our port number that provide in wordpress contanier.
 
 
 To access wordpresss from browser,need EC2 instance public IP Address+Port no. given to wordpresss container.
@@ -122,7 +132,9 @@ http://65.2.146.158:1234 <<------- see interface(This site does not work as inst
 
 
 
-7.Create username and password to create blog on wordpress:
+Steps-7:
+
+Create username and password to create blog on wordpress:
 
 ![Screenshot 2023-08-30 183243](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/af521986-471a-4b56-a6f7-079cc889c2cf)
 
@@ -131,7 +143,9 @@ http://65.2.146.158:1234 <<------- see interface(This site does not work as inst
 
 
 
-8. On Wordpress Dashboard->create Post->Add Content->Publish->Copy link and paste in the browser.
+Steps-8:
+
+On Wordpress Dashboard->create Post->Add Content->Publish->Copy link and paste in the browser.
 
 
 ![Screenshot 2023-08-30 183516](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/552edbcb-1dd5-4467-b99d-328a5bac4c53)
