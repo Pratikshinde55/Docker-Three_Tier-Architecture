@@ -1,5 +1,4 @@
-# Three-Tier-Architecture
-Three Tier Architecture using Docker
+# Three Tier Architecture using Docker
 
  Steps-1:
  
