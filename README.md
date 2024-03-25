@@ -9,10 +9,13 @@ Use following Commands:
 
 
      #sudo su - root   
+     
       
-     #yum install docker -y,
+     #yum install docker -y
+     
       
-     #systemctl enable  docker --now ,
+     #systemctl enable  docker --now 
+     
       
      #systemctl status docker
       
