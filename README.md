@@ -32,7 +32,7 @@ Docker network create command:
 
     docker network create --driver bridge --subnet 10.0.0.1/16  psnet
         
-## Step: 3
+## Step: 3 [Launch MySQL Container using own network]
 Create database with own driver (database- container name)...also provide required enviromental variable
 
 
@@ -54,7 +54,7 @@ Inspect command for check:(here we see our Subnet range(10.0.0.1/16) to our give
 
 Here, check provided Subnet range.
 
-## Step: 4
+## Step: 4 [Launch Wordpress container using own newtwork]
 Launch wordpress and uase PATTING to make outside world connection,As port number of container is 80.
 
 Command for check list port numbers on system:
@@ -71,44 +71,31 @@ Can also check MYWORDPRESS has our subnet range by command on above screenshots.
     
     docker inspect mywordpress
 
-## Step: 5
-
-EC2 intance has Firewall which cannot be connected by outside world, so we can modify inbound rules(All traffic allowed)
-
+## Step: 5 [Edit Inbound rule/ Firewall]
+EC2 Intance has Firewall which cannot be connected by outside world, so we can modify Inbound rule(All traffic allowed)
 
 ![Screenshot 2023-08-30 182129](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/4c596a4b-39f4-49fa-911f-5dc0a4cc01a1)
 
-
 Substeps:
 
-1. : EC2 Dashboard 
-     
-2. select securtity option 
-     
-3. go inside Security groups
-   
- 4. select "edit inbound rule"
-
- 5. delete defult rule and new rule
-    
- 6. custom TCP ->> "ALL TRAFIC" ,ANYWHERE IPv4
-    
- 7. save rule
+1. EC2 Dashboard
+2. Celect securtity option
+3. Go inside Security groups
+4. Select "edit inbound rule"
+5. Delete defult rule and new rule
+6. custom TCP ->> "ALL TRAFIC", ANYWHERE IPv4
+7. Save rule
 
 ## Step: 6
 Instance public + our port number that provide in wordpress contanier.
 
 To access wordpresss from browser,need EC2 instance public IP Address+Port no. given to wordpresss container.
 
-
 ![Screenshot 2023-08-30 182811](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/90f63389-dbfc-40aa-84bb-82d28772da1b)
-
 
 To get wordpress interface on google ,provide details that provided in the form of enviromental variable during "database" caintainer launch
 
-
-http://65.2.146.158:1234 <<------- see interface(This site does not work as instance is terminated now)
-
+http://65.2.146.158:1234    <<------- see interface(This site does not work as instance is terminated now)
 
 ![Screenshot 2023-08-30 182954](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/6ffc643c-d1bb-47fb-a6e4-4e376b263aa9)
 
@@ -116,11 +103,9 @@ http://65.2.146.158:1234 <<------- see interface(This site does not work as inst
 ![Screenshot 2023-08-30 183151](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/b8c3d0e1-9a34-4a66-970e-236fe770f9b4)
 
 ## Step: 7
-
 Create username and password to create blog on wordpress:
 
 ![Screenshot 2023-08-30 183243](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/af521986-471a-4b56-a6f7-079cc889c2cf)
-
 
 ![Screenshot 2023-08-30 183447](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/e159eb84-9f1e-4158-8c41-75376ec2cda0)
 
@@ -134,8 +119,8 @@ On Wordpress Dashboard->create Post->Add Content->Publish->Copy link and paste i
 ![Screenshot 2023-08-30 184434](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/c76e18ff-f6ea-4eba-b4dd-e18ce00331d7)
 
 
-This is Three Tier Architecture using Docker----
-1. WordPress-Blogging Site  ,
-2. MySQL-Database ,
-3. PSNet-Own bridge driver.
+### This is Three Tier Architecture using Docker Overview:
+1. WordPress-Blogging Site
+2. MySQL-Database 
+3. PSNet-Own Bridge driver
 
