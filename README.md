@@ -1,6 +1,6 @@
 # Three Tier Architecture using Docker
 
-## Step: 1 [Install Docker and start docker services]
+## Step: 1 [Install Docker & Start Docker Services]
 Launch EC2 instance and install docker inside and start docker Service:
 
 Docker install command:
@@ -17,7 +17,7 @@ Check Docker Status:
       
 ![Screenshot 2023-08-30 181908](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/1bd38c3c-06dc-436f-9780-00f32455229c)
 
-## Step: 2 [Create custom docker network]
+## Step: 2 [Create Custom Docker Network]
 create own net name as "psnet"
 
 Subnet range 10.0.0.1/16 in CIDR format.
@@ -32,7 +32,7 @@ Docker network create command:
 
     docker network create --driver bridge --subnet 10.0.0.1/16  psnet
         
-## Step: 3 [Launch MySQL Container using own network]
+## Step: 3 [Launch MySQL Container using own Network]
 Create database with own driver (database- container name)...also provide required enviromental variable
 
 
@@ -54,7 +54,7 @@ Inspect command for check:(here we see our Subnet range(10.0.0.1/16) to our give
 
 Here, check provided Subnet range.
 
-## Step: 4 [Launch Wordpress container using own newtwork]
+## Step: 4 [Launch Wordpress Container using own Newtwork]
 Launch wordpress and uase PATTING to make outside world connection,As port number of container is 80.
 
 Command for check list port numbers on system:
@@ -86,7 +86,7 @@ Substeps:
 6. custom TCP ->> "ALL TRAFIC", ANYWHERE IPv4
 7. Save rule
 
-## Step: 6
+## Step: 6 [Access Wordpress from Browser]
 Instance public + our port number that provide in wordpress contanier.
 
 To access wordpresss from browser,need EC2 instance public IP Address+Port no. given to wordpresss container.
@@ -102,14 +102,14 @@ http://65.2.146.158:1234    <<------- see interface(This site does not work as i
 
 ![Screenshot 2023-08-30 183151](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/b8c3d0e1-9a34-4a66-970e-236fe770f9b4)
 
-## Step: 7
+## Step: 7 [Fill Info]
 Create username and password to create blog on wordpress:
 
 ![Screenshot 2023-08-30 183243](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/af521986-471a-4b56-a6f7-079cc889c2cf)
 
 ![Screenshot 2023-08-30 183447](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/e159eb84-9f1e-4158-8c41-75376ec2cda0)
 
-## Step: 8
+## Step: 8 [Create Blog page]
 On Wordpress Dashboard->create Post->Add Content->Publish->Copy link and paste in the browser.
 
 ![Screenshot 2023-08-30 183516](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/552edbcb-1dd5-4467-b99d-328a5bac4c53)
