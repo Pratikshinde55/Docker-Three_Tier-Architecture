@@ -39,45 +39,39 @@ Create database with own driver (database- container name)...also provide requir
  ![Screenshot 2023-08-30 185342](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/98939e39-6331-4145-9fee-be84232e668e)
 
 
+Launch MySQL container using custom networks & adding environmental variables & Attach Host folder:
 
-          #docker run -dit --name database --network psnet -v /mydata:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=pratik55  -e MYSQL_DATABASE=mydatabase  -e MYSQL_USER=jack  -e MYSQL_PASSWORD=jack11 mysql
+    docker run -dit --name database --network psnet -v /mydata:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=pratik55  -e MYSQL_DATABASE=mydatabase  -e MYSQL_USER=jack  -e MYSQL_PASSWORD=jack11 mysql
 
+Inspect command for check:(here we see our Subnet range(10.0.0.1/16) to our given database container)
 
-          #docker inspect database   <--- here we show our subnet range(10.0.0.1/16) to our given database container
+    docker inspect database   
                  
-
 ![Screenshot 2023-08-30 185033](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/a6c68e2e-cfea-4aa7-8f79-5d41ba5caa22)
 
 ![Screenshot 2023-08-30 185149](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/3f1270fe-8fb0-47e1-85d7-66445d06fec4)
 
 
-Here,check provided subnet range.
+Here, check provided Subnet range.
 
+## Step: 4
+Launch wordpress and uase PATTING to make outside world connection,As port number of container is 80.
 
-Steps-4:
-
-Launch wordpress and uase PATTING to make outside world connection 
-
-
- As port number of container is 80 also check by
-         
-         
-          #netstat -tnlp
+Command for check list port numbers on system:
+              
+    netstat -tnlp
           
- 
-  ![Screenshot 2023-08-30 185418](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/b82e4635-d464-44b2-9729-0fc29d532f45)
+![Screenshot 2023-08-30 185418](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/b82e4635-d464-44b2-9729-0fc29d532f45)
 
+Lanuch Wordpress container using custom network:
 
+    docker run -dit --name mywordpress --network psnet -p 1234:80 wordpress
 
-           #docker run -dit --name mywordpress --network psnet -p 1234:80 wordpress
+Can also check MYWORDPRESS has our subnet range by command on above screenshots.(step no.3)
+    
+    docker inspect mywordpress
 
-Can also check MYWORDPRESS has our subnet range by command on above screenshots.( step no.3)
-
-
-                 #docker inspect mywordpress
-
-
-Steps-5:
+## Step: 5
 
 EC2 intance has Firewall which cannot be connected by outside world, so we can modify inbound rules(All traffic allowed)
 
@@ -101,11 +95,8 @@ Substeps:
     
  7. save rule
 
-
-Steps-6:
-
-instance public + our port number that provide in wordpress contanier.
-
+## Step: 6
+Instance public + our port number that provide in wordpress contanier.
 
 To access wordpresss from browser,need EC2 instance public IP Address+Port no. given to wordpresss container.
 
@@ -124,9 +115,7 @@ http://65.2.146.158:1234 <<------- see interface(This site does not work as inst
 
 ![Screenshot 2023-08-30 183151](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/b8c3d0e1-9a34-4a66-970e-236fe770f9b4)
 
-
-
-Steps-7:
+## Step: 7
 
 Create username and password to create blog on wordpress:
 
@@ -135,24 +124,18 @@ Create username and password to create blog on wordpress:
 
 ![Screenshot 2023-08-30 183447](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/e159eb84-9f1e-4158-8c41-75376ec2cda0)
 
-
-
-Steps-8:
-
+## Step: 8
 On Wordpress Dashboard->create Post->Add Content->Publish->Copy link and paste in the browser.
-
 
 ![Screenshot 2023-08-30 183516](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/552edbcb-1dd5-4467-b99d-328a5bac4c53)
 
 ![Screenshot 2023-08-30 184349](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/9cf35c01-a9fb-40a5-9931-187d04b24787)
 
-
 ![Screenshot 2023-08-30 184434](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/c76e18ff-f6ea-4eba-b4dd-e18ce00331d7)
 
 
-
 This is Three Tier Architecture using Docker----
-1>WordPress-Blogging Site  ,
-2>MySQL-Database ,
-3>PSNet-Own bridge driver.
+1. WordPress-Blogging Site  ,
+2. MySQL-Database ,
+3. PSNet-Own bridge driver.
 
