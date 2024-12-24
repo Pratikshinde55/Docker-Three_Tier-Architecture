@@ -1,6 +1,6 @@
 # Three Tier Architecture using Docker
 
-## Step: 1
+## Step: 1 [Install Docker and start docker services]
 Launch EC2 instance and install docker inside and start docker Service:
 
 Docker install command:
@@ -17,27 +17,22 @@ Check Docker Status:
       
 ![Screenshot 2023-08-30 181908](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/1bd38c3c-06dc-436f-9780-00f32455229c)
 
-
-Steps-2: 
-
+## Step: 2 [Create custom docker network]
 create own net name as "psnet"
 
- subnet range 10.0.0.1/16 in CIDR format
+Subnet range 10.0.0.1/16 in CIDR format.
         
+![Screenshot 2023-08-30 185447](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/e265d278-0646-488d-ae0d-de9c46bcf87c)
+
+Command for check docker network list:
+    
+    docker network ls
+
+Docker network create command:
+
+    docker network create --driver bridge --subnet 10.0.0.1/16  psnet
         
-  ![Screenshot 2023-08-30 185447](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/e265d278-0646-488d-ae0d-de9c46bcf87c)
-
-
-      
-       #docker network ls
-        
-       #docker network create --driver bridge --subnet 10.0.0.1/16  psnet
-        
-       #docker network ls
-
-
-Steps-3:
-
+## Step: 3
 Create database with own driver (database- container name)...also provide required enviromental variable
 
 
