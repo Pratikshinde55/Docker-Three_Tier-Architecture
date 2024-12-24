@@ -5,18 +5,17 @@ Launch EC2 instance and install docker inside and start docker Service:
 
 Docker install command:
     
-   yum install docker -y 
+    yum install docker -y 
 
 Start Docker Service command:
    
-   systemctl enable  docker --now 
+    systemctl enable  docker --now 
 
 Check Docker Status:
 
-   systemctl status docker
+    systemctl status docker
       
-
-   ![Screenshot 2023-08-30 181908](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/1bd38c3c-06dc-436f-9780-00f32455229c)
+![Screenshot 2023-08-30 181908](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/1bd38c3c-06dc-436f-9780-00f32455229c)
 
 
 Steps-2: 
