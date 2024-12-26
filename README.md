@@ -1,6 +1,10 @@
 # Three Tier Architecture using Docker
 Create Blogging Site using Docker manual method.
 
+- Set-up:
+
+I use AWS EC2 Instance for this work. The EC2 Amazon machine is Amazon-linux.
+
 - What is Three-tier Architecture:
   
  1. For Blogging Site I use "WordPress".
