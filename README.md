@@ -1,4 +1,11 @@
 # Three Tier Architecture using Docker
+Create Blogging Site using Docker manual method.
+
+- What is Three-tier Architecture:
+  
+ 1. For Blogging Site I use "WordPress".
+ 2. For DataBase to the Wordpress I use "MySQL".
+ 3. For Network I use own customised "Docker network".
 
 ## Step: 1 [Install Docker & Start Docker Services]
 Launch EC2 instance and install docker inside and start docker Service:
