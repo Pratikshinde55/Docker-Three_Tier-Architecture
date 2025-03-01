@@ -31,7 +31,7 @@ Check Docker Status:
 ## Step: 2 [Create Custom Docker Network]
 create own net name as "psnet"
 
-Subnet range 10.0.0.1/16 in CIDR format.
+Subnet range `10.0.0.1/16` in CIDR format.
         
 ![Screenshot 2023-08-30 185447](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/e265d278-0646-488d-ae0d-de9c46bcf87c)
 
@@ -45,16 +45,13 @@ Docker network create command:
         
 ## Step: 3 [Launch MySQL Container using own Network]
 Create database with own driver (database- container name)...also provide required enviromental variable
-
-
  ![Screenshot 2023-08-30 185342](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/98939e39-6331-4145-9fee-be84232e668e)
 
-
-Launch MySQL container using custom networks & adding environmental variables & Attach Host folder:
+Launch MySQL container using custom networks & adding environmental variables & Attach Host folder(Mount volume) Default folder of MySQL storage is `/var/lib/mysql`:
 
     docker run -dit --name database --network psnet -v /mydata:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=pratik55  -e MYSQL_DATABASE=mydatabase  -e MYSQL_USER=jack  -e MYSQL_PASSWORD=jack11 mysql
 
-Inspect command for check:(here we see our Subnet range(10.0.0.1/16) to our given database container)
+Inspect command for check:(here we see our Subnet range`(10.0.0.1/16)` to our given database container)
 
     docker inspect database   
                  
@@ -62,11 +59,10 @@ Inspect command for check:(here we see our Subnet range(10.0.0.1/16) to our give
 
 ![Screenshot 2023-08-30 185149](https://github.com/Pratikshinde55/Three-Tier-Architecture/assets/145910708/3f1270fe-8fb0-47e1-85d7-66445d06fec4)
 
-
 Here, check provided Subnet range.
 
 ## Step: 4 [Launch Wordpress Container using own Newtwork]
-Launch wordpress and uase PATTING to make outside world connection,As port number of container is 80.
+Launch wordpress and uase PATTING to make outside world connection,As port number of container is `80`.
 
 Command for check list port numbers on system:
               
@@ -78,6 +74,10 @@ Lanuch Wordpress container using custom network:
 
     docker run -dit --name mywordpress --network psnet -p 1234:80 wordpress
 
+Wordpress store all iformation of login with database info place in `/var/www/html` there is file that `wp-config.php` (here we can also able to attach Host folder that mount volume)
+
+    docker run -dit --name mywordpress -v /wordstorage:/var/www/html --network psnet -p 1234:80 wordpress
+    
 Can also check MYWORDPRESS has our subnet range by command on above screenshots.(step no.3)
     
     docker inspect mywordpress
